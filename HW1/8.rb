@@ -3,4 +3,4 @@ print "Целочисленный массив:"
 print arr = [27, 4, 5, 64, -2, 45, 120, 587]
 puts
 print "Результат:"
-print arr.select{ |i| i%2 == 0 }.max
+print arr.select{ |i| i%2 == 0}.max
