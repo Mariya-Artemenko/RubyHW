@@ -1,6 +1,12 @@
-print "Дан целочисленный массив. Найти минимальный нечетный элемент.\n"
-print "Целочисленный массив:"
-print arr = [27, 4, -5,-273, 64, -2, 45, 120, 587, 87, 1045]
+puts ("9. Дан целочисленный массив. Заменить все положительные элементы на значение минимального.")
+print "Массив: "
+array = [-5, -4, -3, -2, -1, 6, 1, 2, 3, 4, 5]
+print (array)
+newArray = []
+minElement = array.min
 puts
-print "Результат:"
-print arr.select{ |i| i%2 == 1 }.min
+for i in array do
+    i > 0 ? newArray.push(minElement) : newArray.push(i)
+end
+print "Результат: "
+print newArray

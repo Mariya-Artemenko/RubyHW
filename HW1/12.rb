@@ -1,6 +1,16 @@
-print "Дан целочисленный массив. Найти максимальный отрицательный элемент.\n"
-print "Целочисленный массив:"
-print arr = [-8, 25, 16, 43, -96, 47, -236]
+puts ("12. Дан целочисленный массив. Заменить все отрицательные элементы на значение максимального.")
+print "Массив: "
+array = Array.new(10) {rand(-5..5)}
+print (array)
+newArray = []
+maxElement = array.max
 puts
-print "Результат:"
-print arr.select{ |i| i<0 }.min
+for i in array do
+    if i == 0
+        newArray.push(i)
+    else
+        i < 0 ? newArray.push(maxElement) : newArray.push(i)
+    end
+end
+print "Результат: "
+print newArray
