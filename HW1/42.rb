@@ -4,4 +4,4 @@ arr = Array.new(10) {rand(100)}
 print (arr)
 puts
 print "Результат:"
-print (arr.select {|i| i%2 == 1}.min)
+print (arr.select {|i| i.odd?}.min)
