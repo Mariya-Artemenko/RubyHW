@@ -1,6 +1,6 @@
 class Pet
     attr_accessor :name, :happiness, :food, :sleep, :isToiletEmpty
-
+    require "gem_html"
     def initialize (name, happiness, food, sleep, isToiletEmpty)
         @name = name
         @happiness = happiness
@@ -47,7 +47,7 @@ class Pet
     animal = Pet.new(name, 10, 10, 10, true)
     puts "Народився #{animal.name}! Він ваш домашній улюбленець!"
     puts "Що будемо робити?"
-
+    Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
     if 
         output = gets.chomp().to_s
         case output
@@ -69,6 +69,7 @@ class Pet
                 puts "Їжа #{animal.food}"
                 puts "Сон #{animal.sleep}"
                 puts "Що будемо робити далі?"
+                Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
             when "feed"
                 puts "Ви годуєте #{animal.name} (їжа = 10; шастя + 1)"
                 animal.passageOfTime
@@ -78,6 +79,7 @@ class Pet
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
+                Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
             when "walk"
                 puts "Ви вигулюєте #{animal.name} (щастя + 4)"
                 animal.passageOfTime
@@ -86,6 +88,7 @@ class Pet
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
+                Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
             when "bath"
                 animal.passageOfTime
                 puts "Ви купаєте #{animal.name}. #{animal.name} жалібно нявчить. Йому не подобається (щастя - 3)"
@@ -94,6 +97,7 @@ class Pet
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
+                Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
             when "putToBed"
                 puts "Ви кладете #{animal.name} спати (сон = 10)"
                 animal.passageOfTime
@@ -102,6 +106,7 @@ class Pet
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
+                Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
             when "play"
                 puts "Ви граєте з #{animal.name}. Він весело бігає за іграшковою мишою (щастя + 3)"
                 animal.passageOfTime
@@ -110,6 +115,7 @@ class Pet
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
+                Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
             when "combOut"
                 animal.passageOfTime
                 puts "Ви розчісуєте #{animal.name} (щастя + 1)"
@@ -118,6 +124,7 @@ class Pet
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
+                Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
             when "pet"
                 animal.passageOfTime
                 puts "Ви гладите #{animal.name}. Він задоволено муркоче (щастя + 1)"
@@ -126,6 +133,7 @@ class Pet
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
+                Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
             when "watch"
                 watch = rand(4)
                 if watch == 0
@@ -150,6 +158,7 @@ class Pet
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
+                Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
             when "cleanToilet"
                 animal.isToiletEmpty = true
                 puts "Ви прибрали в туалеті. #{animal.name} буде задоволений"
