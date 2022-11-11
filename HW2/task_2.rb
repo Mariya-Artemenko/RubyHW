@@ -1,6 +1,6 @@
 class Pet
     attr_accessor :name, :happiness, :food, :sleep, :isToiletEmpty
-    require "gem_html"
+    require 'gem_html'
     def initialize (name, happiness, food, sleep, isToiletEmpty)
         @name = name
         @happiness = happiness
@@ -16,125 +16,125 @@ class Pet
 
     def isHungry
         if @food  < 3
-            puts @name + " голосно нявчить, можливо він голодний"
+            puts @name + ' голосно нявчить, можливо він голодний'
         end
         
         if @food  <= 0
-            puts "Ви давно не годували " + @name + ". Він дуже голодний втікає від вас світ за очі. Кінець гри"
+            puts 'Ви давно не годували ' + @name + '. Він дуже голодний втікає від вас світ за очі. Кінець гри'
         end
     end
 
     def isHappy
         if @happiness >= 1 && @happiness <= 3
-            puts @name + " сумує, він нещасний"
+            puts @name + ' сумує, він нещасний'
         end
         if @happiness <= 0
-            puts "Ви не приділяли достатньо уваги до " + @name + ". Він втікає від вас в пошуку більш уважного господаря. Кінець гри"
+            puts 'Ви не приділяли достатньо уваги до ' + @name + '. Він втікає від вас в пошуку більш уважного господаря. Кінець гри'
         end
     end
 
     def isTired
         if @sleep >= 1 && @sleep <= 3
-            puts @name + " хоче, спати"
+            puts @name + ' хоче, спати'
         end
         if @sleep <= 0
-            puts "Виснажений" + @name + " давно не спав. Він більше не витримує і помирає. Кінець гри"
+            puts 'Виснажений' + @name + ' давно не спав. Він більше не витримує і помирає. Кінець гри'
         end
     end
 
-    print "Дайте ім'я улюбленцю: "
+    print 'Дайте імя улюбленцю: '
     name = gets.chomp().to_s
     animal = Pet.new(name, 10, 10, 10, true)
     puts "Народився #{animal.name}! Він ваш домашній улюбленець!"
-    puts "Що будемо робити?"
+    puts 'Що будемо робити?'
     Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
     if 
         output = gets.chomp().to_s
         case output
-            when "help"
-                puts "param - Подивитись стан улюбленця"
-                puts "feed - Погодувати улюбленця"
-                puts "walk - Вигуляти улюбленця"
-                puts "bath - Покупати улюбленця"
-                puts "putToBed - Покласти спати улюбленця"
-                puts "play - Пограти з улюбленцем"
-                puts "combOut - Розчесати улюбленця"
-                puts "pet - Погладити улюбленця"
-                puts "watch - Спостерігати за улюбленцем"
-                puts "cleanToilet - Прибрати туалет улюбленця"
-                puts "Що будемо робити далі?"
-            when "param"
+            when 'help'
+                puts 'param - Подивитись стан улюбленця'
+                puts 'feed - Погодувати улюбленця'
+                puts 'walk - Вигуляти улюбленця'
+                puts 'bath - Покупати улюбленця'
+                puts 'putToBed - Покласти спати улюбленця'
+                puts 'play - Пограти з улюбленцем'
+                puts 'combOut - Розчесати улюбленця'
+                puts 'pet - Погладити улюбленця'
+                puts 'watch - Спостерігати за улюбленцем'
+                puts 'cleanToilet - Прибрати туалет улюбленця'
+                puts 'Що будемо робити далі?'
+            when 'param'
                 puts "Ім'я #{animal.name}"
                 puts "Щастя #{animal.happiness}"
                 puts "Їжа #{animal.food}"
                 puts "Сон #{animal.sleep}"
-                puts "Що будемо робити далі?"
+                puts 'Що будемо робити далі?'
                 Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
-            when "feed"
+            when 'feed'
                 puts "Ви годуєте #{animal.name} (їжа = 10; шастя + 1)"
                 animal.passageOfTime
                 animal.happiness = animal.happiness + 1
                 animal.food = 10
-                puts "Пройшов деякий час. Що будемо робити далі?"
+                puts 'Пройшов деякий час. Що будемо робити далі?'
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
                 Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
-            when "walk"
+            when 'walk'
                 puts "Ви вигулюєте #{animal.name} (щастя + 4)"
                 animal.passageOfTime
                 animal.happiness = animal.happiness + 4
-                puts "Пройшов деякий час. Що будемо робити далі?"
+                puts 'Пройшов деякий час. Що будемо робити далі?'
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
                 Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
-            when "bath"
+            when 'bath'
                 animal.passageOfTime
                 puts "Ви купаєте #{animal.name}. #{animal.name} жалібно нявчить. Йому не подобається (щастя - 3)"
                 animal.happiness = animal.happiness - 3
-                puts "Пройшов деякий час. Що будемо робити далі?"
+                puts 'Пройшов деякий час. Що будемо робити далі?'
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
                 Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
-            when "putToBed"
+            when 'putToBed'
                 puts "Ви кладете #{animal.name} спати (сон = 10)"
                 animal.passageOfTime
                 animal.sleep = 10
-                puts "Пройшов деякий час. Що будемо робити далі?"
+                puts 'Пройшов деякий час. Що будемо робити далі?'
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
                 Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
-            when "play"
+            when 'play'
                 puts "Ви граєте з #{animal.name}. Він весело бігає за іграшковою мишою (щастя + 3)"
                 animal.passageOfTime
                 animal.happiness = animal.happiness + 3
-                puts "Пройшов деякий час. Що будемо робити далі?"
+                puts 'Пройшов деякий час. Що будемо робити далі?'
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
                 Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
-            when "combOut"
+            when 'combOut'
                 animal.passageOfTime
                 puts "Ви розчісуєте #{animal.name} (щастя + 1)"
                 animal.happiness = animal.happiness + 1
-                puts "Пройшов деякий час. Що будемо робити далі?"
+                puts 'Пройшов деякий час. Що будемо робити далі?'
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
                 Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
-            when "pet"
+            when 'pet'
                 animal.passageOfTime
                 puts "Ви гладите #{animal.name}. Він задоволено муркоче (щастя + 1)"
                 animal.happiness = animal.happiness + 1
-                puts "Пройшов деякий час. Що будемо робити далі?"
+                puts 'Пройшов деякий час. Що будемо робити далі?'
                 animal.isHungry
                 animal.isHappy
                 animal.isTired
                 Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
-            when "watch"
+            when 'watch'
                 watch = rand(4)
                 if watch == 0
                     puts "#{animal.name} весело бігає за мухою"
@@ -159,12 +159,12 @@ class Pet
                 animal.isHappy
                 animal.isTired
                 Html.create(animal.name, animal.happiness, animal.food, animal.sleep, animal.isToiletEmpty)
-            when "cleanToilet"
+            when 'cleanToilet'
                 animal.isToiletEmpty = true
                 puts "Ви прибрали в туалеті. #{animal.name} буде задоволений"
             else
                 puts "Ви ввели #{output}, щось не так!"
-                print "Спробуйте ще раз"
+                print 'Спробуйте ще раз'
                 next
         end
     end  while animal.happiness > 0 && animal.food > 0 && animal.sleep > 0
